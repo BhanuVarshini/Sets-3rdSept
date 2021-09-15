@@ -1,0 +1,13 @@
+def nCr(n, r):
+    return (fact(n) / (fact(r)* fact(n - r)))
+def fact(n):
+    a = 1
+    for i in range(2, n+1):
+        a *= i
+    return a
+    
+    
+N = int(input("Enter the number of Screws N: "))
+K = int(input("Enter the number of defective screws K: "))
+probability = (nCr(K,0)*nCr(N+K,2))/(nCr(N, 2))
+print("The probability that the two screws are perfect(with replacement) is {0:.2g} .".format(probability))
